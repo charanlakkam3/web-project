@@ -6,6 +6,7 @@ import BaseNode from './abstractions/BaseNode';
 
 function extractVariables(text) {
   // Matches {{ variableName }}
+  
   const regex = /{{\s*([a-zA-Z_$][a-zA-Z0-9_$]*)\s*}}/g;
   const vars = new Set();
   let match;
@@ -31,7 +32,7 @@ export const TextNode = ({ id, data }) => {
     }
   }, [currText]);
 
-  // Handles for variables (left side) and output (right side)
+  // handles for variables (left side) and output (right side)
   const handles = [
     ...variables.map((v, idx) => ({
       type: 'target',
