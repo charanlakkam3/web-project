@@ -23,7 +23,7 @@ export const OutputNode = ({ id, data }) => {
         {
           type: 'target',
           position: Position.Left,
-          id: `${id}-value`,
+          id: "value",
         },
       ]}
     >

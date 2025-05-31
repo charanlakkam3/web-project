@@ -81,4 +81,5 @@
   width: 12px !important;
   height: 12px !important;
   opacity: 1 !important;
+  pointer-events: all !important;
 }

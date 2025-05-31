@@ -46,6 +46,7 @@ function PipelineUI() {
       let nodeData = { id: nodeID, nodeType: `${type}` };
       return nodeData;
     }
+console.log('Nodes:', nodes);
 
     const onDrop = useCallback(
         (event) => {

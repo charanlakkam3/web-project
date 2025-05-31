@@ -36,13 +36,13 @@ export const TextNode = ({ id, data }) => {
     ...variables.map((v, idx) => ({
       type: 'target',
       position: Position.Left,
-      id: `${id}-var-${v}`,
+      id: `var-${v}`,
       style: { top: `${40 + idx * 28}px` }
     })),
     {
       type: 'source',
       position: Position.Right,
-      id: `${id}-output`,
+      id: "output",
     }
   ];
 
