@@ -11,6 +11,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-.base-node { overflow: visible !important; }
+.base-node { overflow: visible !important;
+}
 .react-flow__handle { pointer-events: all !important;
-                      z-index: 10; }
+                      z-index: 100 !important;
+}
+.react-flow__pane {
+  pointer-events: all !important;
+}

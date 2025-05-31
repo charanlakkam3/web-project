@@ -1,6 +1,8 @@
 // store.js
 
-import { create } from "zustand";
+
+import { createWithEqualityFn } from "zustand/traditional";
+import { shallow } from "zustand/shallow";
 import {
     addEdge,
     applyNodeChanges,
@@ -8,8 +10,12 @@ import {
     //MarkerType,
   } from 'reactflow';
 
-export const useStore = create((set, get) => ({
-    nodes: [],
+//export const useStore = create((set, get) => ({
+  export const useStore = createWithEqualityFn((set, get) => ({
+    nodes: [
+      // { id: '1', type: 'input', data: { label: 'A' }, position: { x: 0, y: 0 } },
+      //   { id: '2', type: 'output', data: { label: 'B' }, position: { x: 200, y: 0 } },
+    ],
     edges: [],
     getNodeID: (type) => {
         const newIDs = {...get().nodeIDs};
@@ -36,9 +42,7 @@ export const useStore = create((set, get) => ({
       });
     },
     onConnect: (connection) => {
-      console.log('onConnect called with:', connection);
       set({
-        //edges: addEdge({...connection, type: 'smoothstep', animated: true, markerEnd: {type: MarkerType.Arrow, height: '20px', width: '20px'}}, get().edges),
         edges: addEdge(connection, get().edges),
       });
     },
@@ -48,9 +52,8 @@ export const useStore = create((set, get) => ({
           if (node.id === nodeId) {
             node.data = { ...node.data, [fieldName]: fieldValue };
           }
-  
           return node;
         }),
       });
     },
-  }));
+  }),shallow );

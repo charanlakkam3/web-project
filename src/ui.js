@@ -1,3 +1,5 @@
+//ui.js
+
 import { useState, useRef, useCallback } from 'react';
 import ReactFlow, { Controls, Background, MiniMap } from 'reactflow';
 import { useStore } from './store';
@@ -46,7 +48,7 @@ function PipelineUI() {
       let nodeData = { id: nodeID, nodeType: `${type}` };
       return nodeData;
     }
-console.log('Nodes:', nodes);
+//console.log('Nodes:', nodes);
 
     const onDrop = useCallback(
         (event) => {

@@ -21,7 +21,14 @@ const BaseNode = ({
         type={h.type}
         position={h.position}
         id={h.id}
-        style={h.style}
+        //style={h.style}
+        style={{
+          width: 10,
+          height: 10,
+          background: '#555',
+          borderRadius: '50%',
+          ...h.style
+  }}
       />
     ))}
   </div>
